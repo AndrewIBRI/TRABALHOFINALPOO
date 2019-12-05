@@ -60,11 +60,11 @@ public class TelaLogin extends JFrame {
 		lblTelaDeLogin.setBounds(158, 12, 138, 15);
 		contentPane.add(lblTelaDeLogin);
 		
-		JLabel lblNewLabel = new JLabel("CPF");
+		JLabel lblNewLabel = new JLabel("Usuario");
 		lblNewLabel.setBounds(28, 59, 66, 15);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("SENHA");
+		JLabel lblNewLabel_1 = new JLabel("Senha");
 		lblNewLabel_1.setBounds(28, 120, 66, 15);
 		contentPane.add(lblNewLabel_1);
 		

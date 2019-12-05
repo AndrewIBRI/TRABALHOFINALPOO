@@ -152,7 +152,11 @@ public class TelaAluno extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				if(Acervo.tamanho()>0) {
-					Acervo.setDevolucao(MeusLivros.getSelectedValue().toString());
+					try{Acervo.setDevolucao(MeusLivros.getSelectedValue().toString());
+					
+					}catch(NullPointerException e) {
+						JOptionPane.showMessageDialog(contentPane, "Selecione um livro");
+					}
 				}
 				
 				
@@ -193,8 +197,14 @@ public class TelaAluno extends JFrame {
 		btnNewButton_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				
 				if(Acervo.tamanho()>0) {
-					Acervo.renovar(MeusLivros.getSelectedIndex());
+					
+					try{Acervo.renovar(MeusLivros.getSelectedValue().toString());
+					
+					}catch(NullPointerException e) {
+						JOptionPane.showMessageDialog(contentPane, "Selecione um livro");
+					}
 				}	
 				
 				DefaultListModel listaLivros = new DefaultListModel();

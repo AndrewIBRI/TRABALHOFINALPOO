@@ -72,7 +72,7 @@ public class TelaBibliotecaria extends JFrame {
 		btnListarLivros.setBounds(37, 12, 197, 25);
 		contentPane.add(btnListarLivros);
 		
-		JButton btnLivrosDisp = new JButton("LIvros disp.");
+		JButton btnLivrosDisp = new JButton("Livros disponiveis");
 		btnLivrosDisp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			
@@ -81,8 +81,9 @@ public class TelaBibliotecaria extends JFrame {
 				if(Acervo.tamanho()>0) {	for (int i =0; i < Acervo.tamanho();i++){
 					if(Acervo.getAcervos(i).getAlugado().equals("Nao")){
 							
-							listaAlunos.addElement(Acervo.getAcervos(i));}
-				};
+							listaAlunos.addElement(Acervo.getAcervos(i));
+							}
+				}
 				}else listaAlunos.addElement("Nenhum Livro Disponivel");
 				
 				list.setModel(listaAlunos);
@@ -94,7 +95,7 @@ public class TelaBibliotecaria extends JFrame {
 		btnLivrosDisp.setBounds(260, 12, 192, 25);
 		contentPane.add(btnLivrosDisp);
 		
-		JButton btnLivrosEmprest = new JButton("Livros emprest.");
+		JButton btnLivrosEmprest = new JButton("Livros emprestados");
 		btnLivrosEmprest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				DefaultListModel listaAlunos = new DefaultListModel();
@@ -103,8 +104,8 @@ public class TelaBibliotecaria extends JFrame {
 					if(Acervo.getAcervos(i).getAlugado().equals("Sim")){
 							
 							listaAlunos.addElement(Acervo.getAcervos(i));
-							}else listaAlunos.addElement("Nenhum Livro Alugado");
-				};
+							}
+				}
 				}else listaAlunos.addElement("Nenhum Livro Alugado");
 				
 				list.setModel(listaAlunos);

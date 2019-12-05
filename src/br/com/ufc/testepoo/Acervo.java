@@ -23,13 +23,18 @@ public class Acervo {
 		Acervos.get(i).setAlugado("Sim");
 		Acervos.get(i).setTempo(30);
 	}
-	public static void renovar(int i) {
-		Acervos.get(i).setTempo(+7);
+	public static void renovar(String tostring) {
+		for(int i = 0;i<Acervos.size(); i++) {
+			if(Acervos.get(i).toString().equals(tostring)) {
+				Acervos.get(i).setTempo(Acervos.get(i).getTempo()+7);;
+			}
+		}
 	}
 	public static void setDevolucao(String tostring) {
 		for(int i = 0;i<Acervos.size(); i++) {
 			if(Acervos.get(i).toString().equals(tostring)) {
 				Acervos.get(i).setAlugado("Nao");
+				Acervos.get(i).setTempo(0);
 			}
 		}
 	}
